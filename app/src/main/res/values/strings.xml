@@ -1,0 +1,23 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">InventoryApp</string>
+
+    <string name="name">Name</string>
+    <string name="price">Price</string>
+    <string name="quantity">Quantity</string>
+
+    <string name="add">Add</string>
+
+    <string name="increase">+</string>
+    <string name="decrease">-</string>
+
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="order">Order</string>
+
+    <string name="image">Click on android icon to select image from gallery</string>
+
+    <string name="orderMessage">I order</string>
+    <string name="email_subject">Order <xliff:g id="orderName">%s</xliff:g></string>
+
+    <string name="thank_you">Thank you!</string>
+</resources>
