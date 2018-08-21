@@ -18,7 +18,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.example.muklahhn.inventoryapp.data.InventoryContract;
 
 public class MainActivity extends AppCompatActivity implements
@@ -32,8 +31,6 @@ public class MainActivity extends AppCompatActivity implements
     RecyclerView mRecyclerView;
 
     TextView emptyList;
-
-    Cursor inventoryData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

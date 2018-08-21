@@ -2,7 +2,6 @@ package com.example.muklahhn.inventoryapp;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,9 +16,6 @@ import android.support.v4.content.Loader;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,7 +46,6 @@ public class DetailActivity extends AppCompatActivity implements
             InventoryContract.InventoryEntry.COLUMN_IMAGE
     };
 
-    public static final int INDEX_ID = 0;
     public static final int INDEX_NAME = 1;
     public static final int INDEX_PRICE = 2;
     public static final int INDEX_QUANTITY = 3;
@@ -105,7 +100,7 @@ public class DetailActivity extends AppCompatActivity implements
                 uri = uri.buildUpon().appendPath(favoriteMovieId).build();
 
                 int quantityString = Integer.parseInt(mQuantity.getText().toString().trim());
-                if (quantityString > 0) {
+                if (quantityString >= 0) {
                     ContentValues values = new ContentValues();
                     values.put(InventoryContract.InventoryEntry.COLUMN_QUANTITY, ++quantityString);
                     getContentResolver().update(uri, values, null, null);
@@ -165,32 +160,14 @@ public class DetailActivity extends AppCompatActivity implements
 
     }
 
-
-//     mDecrease.setOnClickListener(new View.OnClickListener() {
-//
-//        @Override
-//        public void onClickDelete (View view){
-//        getContentResolver().delete(mUri, null, null);
-//        String text = "Deleted From Database";
-//        Toast.makeText(getBaseContext(), text, Toast.LENGTH_LONG).show();
-//        Intent back = new Intent(DetailActivity.this, MainActivity.class);
-//        DetailActivity.this.startActivity(back);
-//    }
-//    }
-//    });
-
     public void onClickSave(View view) {
         saveEdit();
     }
 
     @SuppressLint("StringFormatInvalid")
     public void onClickOrder(View view) {
-//        teamAEditable = teamAET.getText();
         String orderName = mName.getText().toString();
         String orderQuantity = mQuantity.getText().toString();
-
-//        teamBEditable = teamBET.getText();
-//        teamB = teamBEditable.toString();
 
         String message = createMatchSummary(orderName, orderQuantity);
 

@@ -7,7 +7,7 @@ import android.provider.BaseColumns;
  * Created by Muklah H N on 14/07/2018.
  */
 
-public class InventoryContract {
+public final class InventoryContract {
 
     public static final String AUTHORITY = "com.example.muklahhn.inventoryapp";
 
